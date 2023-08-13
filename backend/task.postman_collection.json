@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "6f204e0b-6159-4ee7-99eb-40a8c2bd3f5c",
+		"name": "task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27534742"
+	},
+	"item": [
+		{
+			"name": "userRegister",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "vinay_wolf",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "vinayworking@gmil.comd",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "asdfghjkl",
+							"type": "text"
+						},
+						{
+							"key": "profile",
+							"type": "file",
+							"src": "/C:/Users/91628/Desktop/Screenshot 2023-07-04 105304.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/register-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"register-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"vinay1@kumar.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/login-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"login-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTask",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGQzM2VjNzAwM2IxYTE2ZjI3YjliNDMiLCJpYXQiOjE2OTE4MjkzNjZ9.qe7UTyIQJB_2WXmm5SFCltg8wvUwGER6MOMidSatPEA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "fixing",
+							"type": "text"
+						},
+						{
+							"key": "due_date",
+							"value": "2023-08-30",
+							"type": "text"
+						},
+						{
+							"key": "attachment",
+							"type": "file",
+							"src": "/C:/Users/91628/Downloads/extra/First Assignment.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/task/create-task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"task",
+						"create-task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTask",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGQzM2VjNzAwM2IxYTE2ZjI3YjliNDMiLCJpYXQiOjE2OTE4MzEwNDV9.p1RH-AKuenZaF3fanccfWkp1a4DN3VMx1ASDNFVCitE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/task/edit-task?task_id=64d750e2ce0b5a842e454b42",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"task",
+						"edit-task"
+					],
+					"query": [
+						{
+							"key": "task_id",
+							"value": "64d750e2ce0b5a842e454b42"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTask",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGQzM2VjNzAwM2IxYTE2ZjI3YjliNDMiLCJpYXQiOjE2OTE4MzEwNDV9.p1RH-AKuenZaF3fanccfWkp1a4DN3VMx1ASDNFVCitE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/task/delete-task?task_id=64d750e2ce0b5a842e454b42",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"task",
+						"delete-task"
+					],
+					"query": [
+						{
+							"key": "task_id",
+							"value": "64d750e2ce0b5a842e454b42"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "exportCSV",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/report/generate-report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"report",
+						"generate-report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "exportPDF",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGQzM2VjNzAwM2IxYTE2ZjI3YjliNDMiLCJpYXQiOjE2OTE4NDI1NDR9.92Km5FTD2v6q1EagPKWJ73w41hmhn3t39bz-aynwnXI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/report/generate-report-pdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"report",
+						"generate-report-pdf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
